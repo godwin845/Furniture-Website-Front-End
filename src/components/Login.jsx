@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import LoginBg from '../assets/LoginBg.svg';
 import axios from 'axios';
-import { IoMdClose } from "react-icons/io";
 
 const Login = () => {
   const [email, setEmail] = useState('');
