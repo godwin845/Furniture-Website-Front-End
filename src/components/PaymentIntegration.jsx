@@ -32,7 +32,6 @@ const handlePayment = async (amount, navigate) => {
       // alert(response.razorpay_signature);
       
       alert('Your order placed successfully!');
-
       navigate('/orders');
     },
     prefill: {

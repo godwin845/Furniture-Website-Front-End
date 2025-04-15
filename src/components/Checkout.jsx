@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import PaymentIntegration from './PaymentIntegration';
-import { useNavigate } from 'react-router-dom';
 
 const Checkout = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -19,8 +18,6 @@ const Checkout = () => {
     shipToDifferentAddress: false,
     orderNotes: '',
   });
-
-  const navigate = useNavigate();
 
   // Load cart items from localStorage on component mount
   useEffect(() => {
@@ -101,9 +98,6 @@ const Checkout = () => {
     const storedOrders = JSON.parse(localStorage.getItem('orders')) || [];
     storedOrders.push(orderData);
     localStorage.setItem('orders', JSON.stringify(storedOrders));
-
-    alert('Your order placed successfully!');
-    navigate('/orders');
   
     // Clear the cart after placing the order
     localStorage.setItem('cartItems', JSON.stringify([]));
@@ -284,29 +278,27 @@ const Checkout = () => {
                     {cartItems.map((item) => (
                       <tr key={item.id} className="border-b">
                         <td>{item.name} <span className="font-bold">x</span> {item.quantity}</td>
-                        <td>{`₹${item.price}`}</td>
+                        <td>${`${item.price}`}</td>
                       </tr>
                     ))}
                     <tr className="border-b font-semibold">
                       <td>Cart Subtotal</td>
-                      <td>{`₹${getCartTotal().toFixed(2)}`}</td>
+                      <td>${`${getCartTotal().toFixed(2)}`}</td>
                     </tr>
                     <tr className="font-semibold">
                       <td>Order Total</td>
-                      <td>{`₹${getFinalTotal().toFixed(2)}`}</td>
+                      <td>${`${getFinalTotal().toFixed(2)}`}</td>
                     </tr>
                   </tbody>
                 </table>
 
-                <button
-                  type="button"  // Changed from 'submit' to 'button'
-                  onClick={handlePlaceOrder}
-                  className="bg-blue-500 text-white px-4 py-2 rounded"
-                >
-                  Place order
-                </button>
-
               </form>
+
+              <div
+                  onClick={handlePlaceOrder}
+                >
+                  <PaymentIntegration amount={getFinalTotal().toFixed(2)} />
+                </div>
             </div>
           </div>
         </div>
