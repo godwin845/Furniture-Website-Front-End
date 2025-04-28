@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import TabNavbar from './TabNavbar';
 
 const OrderPage = () => {
   const [orders, setOrders] = useState([]);
@@ -25,15 +26,12 @@ const OrderPage = () => {
   };
 
   return (
-    <div className="font-sans px-4 mt-10 mb-10">
-      <button onClick={handleLogout} className="bg-red-500 w-30 text-white p-3 rounded-xl ml-5">
+    <div className="font-sans px-4 mb-10 bg-[#B33C4A] selection:bg-[#FB7B9B] selection:text-black">
+      <button onClick={handleLogout} className="bg-red-500 w-30 mt-10 text-white p-3 rounded-xl ml-5">
         Logout
       </button>
 
-      <div className='mt-10'>
-        <Link to='/user'><button className='bg-[#3b5d50] w-30 text-white p-3 rounded-xl ml-5'>Dashboard</button></Link>
-        <Link to='/orders'><button className='bg-[#3b5d50] w-30 text-white p-3 rounded-xl ml-5'>My Orders</button></Link>
-      </div>
+      <TabNavbar />
 
       <h1 className="text-4xl mb-4 text-center mt-10">Your Orders</h1>
 

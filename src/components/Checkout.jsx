@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PaymentIntegration from './PaymentIntegration';
+import { Link } from 'react-router-dom';
 
 const Checkout = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -105,18 +106,10 @@ const Checkout = () => {
   };  
 
   return (
-    <div className="font-sans">
+    <div className="font-sans bg-[#FB7B9B] selection:bg-[#B33C4A] selection:text-white">
       <div className="px-4 md:px-20 py-10">
-        {/* Login Note */}
-        <div className="mb-10">
-          <p>
-            Returning customer?{' '}
-            <a href="/" className="text-blue-600 underline">
-              Click here
-            </a>{' '}
-            to login
-          </p>
-        </div>
+
+        <h1 className='text-4xl text-center font-semibold mt-5 mb-20'>Checkout</h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           {/* Billing Details */}

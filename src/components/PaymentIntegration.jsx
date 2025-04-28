@@ -61,8 +61,8 @@ const PaymentIntegration = ({ amount }) => {
   const navigate = useNavigate();
 
   return (
-    <div>
-      <button onClick={() => handlePayment(amount, navigate)} className="w-full bg-black text-white py-3 rounded-full font-bold">
+    <div className='mt-5 font-sans'>
+      <button onClick={() => handlePayment(amount, navigate)} className="w-full bg-[#B33C4A] text-white py-3 rounded-full font-bold">
         Pay with Razorpay
       </button>
     </div>

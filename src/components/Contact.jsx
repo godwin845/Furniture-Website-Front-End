@@ -1,51 +1,34 @@
 import React from 'react';
+import ContactImage from '../assets/Contact.svg';
 
 const Contact = () => {
   return (
-    <div>
-      {/* Contact Info */}
-      <div className="py-12 text-center bg-gray-100">
-        <div className="container mx-auto flex justify-center gap-8 text-lg">
-          <div className="flex items-center">
-            <i className="fa-solid fa-location-dot fa-lg"></i>
-            <p className="px-3">43 Raymouth Rd. Baltemoer, London 3910</p>
-          </div>
-          <div className="flex items-center">
-            <i className="fa-solid fa-envelope fa-lg"></i>
-            <p className="px-3">info@yourdomain.co</p>
-          </div>
-          <div className="flex items-center">
-            <i className="fa-solid fa-phone fa-lg"></i>
-            <p className="px-3">+1 294 3925 3939</p>
-          </div>
-        </div>
+    <div className='text-white p-1 font-sans selection:bg-[#FB7B9B] selection:text-black'
+      style={{ backgroundImage: `url(${ContactImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+    >
+
+      <div className='text-center mt-10'>
+        <div className="text-white font-semibold text-4xl font-sans">Get In Touch With Us</div>
+        <div className="lg:w-[615px] mt-5 font-semibold lg:ml-120 h-16 text-white text-base font-sans">We’re here for all your furniture needs! Contact us for any product inquiries, <br/>design tips, or assistance—we’d love to hear from you!</div>
       </div>
 
       {/* Contact Form */}
       <div className="px-5 md:px-20 py-12">
         <div className="max-w-4xl mx-auto">
-          <h1 className='text-4xl text-center mb-15'>Contact Us</h1>
-          <form className="space-y-8">
+          <form className="space-y-8 text-center">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
-                <label htmlFor="first-name" className="block text-lg font-medium mb-2">First name</label>
-                <input type="text" id="first-name" className="w-full p-4 text-lg border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3b5d50]" />
-              </div>
-              <div>
-                <label htmlFor="last-name" className="block text-lg font-medium mb-2">Last name</label>
-                <input type="text" id="last-name" className="w-full p-4 text-lg border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3b5d50]" />
+                <input type='name' className="w-96 h-10 lg:ml-65 text-black text-center bg-white rounded-[20px] font-semibold" placeholder='Enter your name' />
               </div>
             </div>
             <div>
-              <label htmlFor="email" className="block text-lg font-medium mb-2">Email</label>
-              <input type="email" id="email" className="w-full p-4 text-lg border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3b5d50]" />
+              <input type='email' className="w-96 h-10 text-black text-center bg-white rounded-[20px] font-semibold" placeholder='Enter your email' />
             </div>
             <div>
-              <label htmlFor="comments" className="block text-lg font-medium mb-2">Comments</label>
-              <textarea id="comments" rows="4" className="w-full p-4 text-lg border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3b5d50]"></textarea>
+              <textarea className="w-96 h-64 text-black bg-white rounded-[20px] pt-25 text-center font-semibold" placeholder='Leave your message' />
             </div>
             <div>
-              <button type="submit" className="bg-[#3b5d50] text-white py-3 px-8 rounded-full text-lg">Send Message</button>
+              <button type="submit" className="bg-[#B33C4A] text-white py-3 px-8 rounded-full text-lg">Send Message</button>
             </div>
           </form>
         </div>
